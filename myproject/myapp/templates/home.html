@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+ <h2>All Announcements</h2>
+ <ul>
+ {% for announcement in announcements %}
+   <li>
+     <h3>{{ announcement.title }}</h3>
+     <p>{{ announcement.content }}</p>
+   </li>
+ {% empty %}
+   <li>No announcements yet.</li>
+ {% endfor %}
+ </ul>
+<h2>Create New Announcement</h2>
+
+<form method="post" action="{% url 'create_announcement' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create</button>
+</form>
+
+{% endblock %}

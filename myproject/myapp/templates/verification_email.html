@@ -1,0 +1,10 @@
+{% autoescape off %}
+Hello {{ user.username }},
+
+Thank you for registering on our site. Please click the link below to confirm your registration:
+
+http://localhost:8000/confirm/{{ user.id }}/{{ code }}
+
+Best regards,
+Your Team
+{% endautoescape %}

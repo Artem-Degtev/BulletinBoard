@@ -1,0 +1,17 @@
+
+<!-- create_announcement.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Создание объявления</title>
+</head>
+<body>
+    <h1>Создание объявления</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Создать объявление</button>
+    </form>
+</body>
+</html>
+
